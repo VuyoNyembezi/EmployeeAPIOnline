@@ -44,10 +44,11 @@ namespace EmployeeAPIOnline.Controllers
             {
                 if (register != null)
                 {
-                    _logger.Infor($"new user Added to the Sytem administration Rights name : {register.AdminName }, Email : { register.Email}");
+                   
                     var result = await _loginbl.CreateProfile(register);
                     if (result >= 1)
                     {
+                        _logger.Infor($"new user Added to the Sytem administration Rights name : {register.AdminName }, Email : { register.Email}");
                         returnobj.ReturnId = result;
                         returnobj.Status = "Success";
                         returnobj.Message = "user added successful";
